@@ -15,12 +15,14 @@ public class CalculadoraEdad {
         }
         return edad;
     }
+    
 
     private void validarFechas(LocalDate fechaNacimiento, LocalDate fechaActual) {
         if (fechaNacimiento.isAfter(fechaActual)) {
             throw new IllegalArgumentException(ERROR_FECHA_FUTURA);
         }
     }
+    
 
     private boolean yaCumplioAnios(LocalDate fechaNacimiento, LocalDate fechaActual) {
         if (fechaActual.getMonthValue() > fechaNacimiento.getMonthValue()) {
@@ -29,6 +31,8 @@ public class CalculadoraEdad {
         if (fechaActual.getMonthValue() == fechaNacimiento.getMonthValue()) {
             return fechaActual.getDayOfMonth() >= fechaNacimiento.getDayOfMonth();
         }
+        
         return false;
     }
+    
 }
